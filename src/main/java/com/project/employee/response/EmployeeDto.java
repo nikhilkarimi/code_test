@@ -4,41 +4,58 @@ import java.time.LocalDate;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class EmployeeDto {
-    private Long id;
-    private String firstname;
-    private String lastname;
-    private String email;
-    private String phoneNumber;
-    private LocalDate dateOfBirth;
-    private Long salary;
+    private Long employeeId;
+    private String firstName;
+    private String lastName;
+    private double totalSalary;
+    private double taxAmount;
+    private double cessAmount;
 
-    public Double getYearlySalary() {
-        return yearlySalary;
+    public Long getEmployeeId() {
+        return employeeId;
     }
 
-    public void setYearlySalary(Double yearlySalary) {
-        this.yearlySalary = yearlySalary;
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public Double getCessAmount() {
-        return cessAmount;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setCessAmount(Double cessAmount) {
-        this.cessAmount = cessAmount;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    private Double yearlySalary;
-    private Double cessAmount;
+    public String getLastName() {
+        return lastName;
+    }
 
-    public Double getTaxAmount() {
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public double getTotalSalary() {
+        return totalSalary;
+    }
+
+    public void setTotalSalary(double totalSalary) {
+        this.totalSalary = totalSalary;
+    }
+
+    public double getTaxAmount() {
         return taxAmount;
     }
 
-    public void setTaxAmount(Double taxAmount) {
+    public void setTaxAmount(double taxAmount) {
         this.taxAmount = taxAmount;
     }
 
-    private Double taxAmount;
+    public double getCessAmount() {
+        return cessAmount;
+    }
 
+    public void setCessAmount(double cessAmount) {
+        this.cessAmount = cessAmount;
+    }
 }

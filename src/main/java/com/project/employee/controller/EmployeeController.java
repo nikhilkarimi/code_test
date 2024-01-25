@@ -18,14 +18,14 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping
-    public ResponseEntity<Employee> createEmployeeDetails(@RequestBody Employee employee){
-        Employee employee1 = employeeService.createEmployeeDetails(employee);
-        return new ResponseEntity<>(employee1, HttpStatus.CREATED);
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+        Employee createdEmployee = employeeService.createEmployee(employee);
+        return new ResponseEntity<>(createdEmployee, HttpStatus.CREATED);
     }
 
     @GetMapping("/tax-details")
     public ResponseEntity<List<EmployeeDto>> getAllEmployeeTaxDetails(){
-        List<EmployeeDto> employeeDto =  employeeService.getEmployeeDetails();
+        List<EmployeeDto> employeeDto =  employeeService.getAllEmployeeTaxDetails();
         return new ResponseEntity<>(employeeDto,HttpStatus.OK);
     }
 }

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,28 +15,35 @@ import java.time.LocalDate;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column
-    private String firstname;
-    @Column
-    private String lastname;
-    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "employee_id")
+    private Long employeeId;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "email")
     private String email;
-    @Column
-    private String phoneNumber;
-    @Column
-    private LocalDate dateOfBirth;
-    @Column
-    private  Long salary;
 
-    @Transient
-    private Double yearlySalary;
+    @Column(name = "phone_number")
+    private String phoneNumbers;
 
-    @Transient
-    private Double cessAmount;
+    @Column(name = "doj")
+    private LocalDate doj;
 
-    @Transient
-    private Double taxAmount;
+    @Column(name = "salary")
+    private double salary;
+
+    @Column(name = "total_salary")
+    private double totalSalary;
+
+    @Column(name = "cess_amount")
+    private double cessAmount;
+
+    @Column(name = "tax_amount")
+    private double taxAmount;
 
 }
